@@ -253,3 +253,39 @@ Error: Failed to pull image "123456789012.dkr.ecr.us-west-2.amazonaws.com/retail
 # Check: AWK script in deploy.yml targets only main service image
 ```
 
+## 👨‍💻 Development Workflow
+
+### **For Public Application Changes (Main Branch)**
+```bash
+1. git checkout main
+2. Make changes to application code
+3. Update Helm chart values manually if needed
+4. git commit && git push origin main
+5. Deploy manually or let ArgoCD sync
+```
+
+### **For Production Changes (GitOps Branch)**
+```bash
+1. git checkout gitops
+2. Make changes to application code in src/ directory
+3. git commit && git push origin gitops
+4. GitHub Actions automatically:
+   - Builds changed services
+   - Updates Helm charts
+   - Commits changes back
+5. ArgoCD automatically syncs changes
+```
+
+### **Switching Between Branches**
+```bash
+# To use main branch (public application)
+kubectl delete -f argocd/applications/ -n argocd  # Remove production apps
+git checkout main
+kubectl apply -f argocd/applications/retail-store-app.yaml -n argocd
+
+# To use gitops branch (production)  
+kubectl delete application retail-store-app -n argocd  # Remove umbrella app
+git checkout gitops
+kubectl apply -f argocd/applications/ -n argocd  # Apply individual apps
+```
+
