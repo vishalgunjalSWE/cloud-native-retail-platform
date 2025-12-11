@@ -212,3 +212,44 @@ in_main_image && /repository:/ && !updated_repo {
 }
 /^[a-zA-Z]/ && !/^image:/ { in_main_image = 0 }  # Exit image section
 ```
+## 🔧 Troubleshooting
+
+### **SharedResourceWarning in ArgoCD**
+```yaml
+# Problem: Same resources deployed by multiple applications
+Error: ClusterIssuer/letsencrypt-prod is part of applications argocd/retail-store-app and retail-store-ui
+
+# Solution: Use only one deployment method per branch
+Public Application branch: Use umbrella chart only
+Production branch: Use individual applications only
+```
+
+### **Image Pull Errors**
+```yaml
+# Problem: Wrong ECR repository or missing images
+Error: Failed to pull image "123456789012.dkr.ecr.us-west-2.amazonaws.com/retail-store-ui:abc1234"
+
+# Solutions:
+1. Check ECR repository exists (workflow creates automatically)
+2. Verify AWS credentials have ECR permissions
+3. Ensure image was built and pushed successfully
+4. Check GitHub Actions logs for build failures
+```
+
+### **Workflow Not Triggering**
+```yaml
+# Problem: GitHub Actions not running on commits
+# Solutions:
+1. Ensure changes are in src/ directory
+2. Check branch is 'gitops'
+3. Verify GitHub Actions is enabled
+4. Check workflow file syntax (.github/workflows/deploy.yml)
+```
+
+### **Infrastructure Images Being Overwritten**
+```yaml
+# Problem: MySQL/Redis images pointing to private ECR
+# Solution: Workflow should preserve infrastructure images
+# Check: AWK script in deploy.yml targets only main service image
+```
+
