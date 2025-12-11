@@ -152,3 +152,38 @@ Configure these secrets in your GitHub repository settings:
   ]
 }
 ```
+## 🔄 Deployment Workflows
+
+### **Public Application Workflow**
+```bash
+1. Developer commits to main branch
+2. Manual deployment required
+3. Uses stable public images
+4. ArgoCD syncs umbrella chart
+5. All services deployed together
+```
+
+### **Production Workflow**
+```bash
+1. Developer commits to gitops branch (src/ directory)
+2. GitHub Actions detects changes
+3. Builds only changed services
+4. Pushes images to private ECR
+5. Updates Helm chart values with new image tags
+6. Commits changes back to gitops branch
+7. ArgoCD syncs individual applications
+8. Only changed services are redeployed
+```
+
+### **Change Detection Logic**
+```yaml
+# Only builds services with actual code changes
+Changed files in src/ui/ → Build ui service
+Changed files in src/catalog/ → Build catalog service
+Changed files in src/cart/ → Build cart service
+Changed files in src/checkout/ → Build checkout service
+Changed files in src/orders/ → Build orders service
+
+# Manual trigger builds all services
+workflow_dispatch → Build all services
+```
