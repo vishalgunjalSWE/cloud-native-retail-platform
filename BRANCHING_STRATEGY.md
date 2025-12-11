@@ -187,3 +187,28 @@ Changed files in src/orders/ → Build orders service
 # Manual trigger builds all services
 workflow_dispatch → Build all services
 ```
+## 🏗️ Infrastructure Components
+
+### **Service Images vs Infrastructure Images**
+
+#### **Service Images (Updated by Workflow)**
+- **ui, catalog, cart, checkout, orders** - Application services
+- **Source**: Private ECR repositories
+- **Updates**: Automated via GitHub Actions
+- **Versioning**: Git commit hash (7 characters)
+
+#### **Infrastructure Images (Preserved by Workflow)**
+- **mysql, redis, postgresql, rabbitmq, dynamodb-local** - Database/messaging
+- **Source**: Public ECR/Docker Hub
+- **Updates**: Manual only (stable versions)
+- **Versioning**: Semantic versioning
+
+### **Workflow Protection Logic**
+```bash
+# AWK script ensures only main service image is updated
+/^image:/ { in_main_image = 1 }  # Target first image: section only
+in_main_image && /repository:/ && !updated_repo { 
+  # Update only if we haven't updated repository yet
+}
+/^[a-zA-Z]/ && !/^image:/ { in_main_image = 0 }  # Exit image section
+```
