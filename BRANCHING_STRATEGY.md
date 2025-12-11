@@ -23,3 +23,19 @@ graph LR
     L --> M[Update Helm Charts]
     M --> N[ArgoCD Sync]
 ```
+
+## 🌐 Public Application (Main Branch)
+
+### **Purpose**
+Simple deployment with public container images for demos, learning, and quick testing.
+
+### **Characteristics**
+```yaml
+✅ Branch: main
+✅ Images: Public ECR (stable versions)
+✅ Deployment: Manual Helm chart management
+✅ ArgoCD: Umbrella chart (retail-store-app)
+✅ Workflows: None (no .github/workflows/)
+✅ Updates: Manual only
+✅ Target: Demos, learning, simple deployments
+```
