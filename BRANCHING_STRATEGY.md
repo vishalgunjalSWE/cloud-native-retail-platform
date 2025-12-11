@@ -116,3 +116,39 @@ spec:
     targetRevision: gitops
 ```
 
+## 🔧 GitHub Actions Setup
+
+### **Required Secrets**
+Configure these secrets in your GitHub repository settings:
+
+| Secret Name | Description | Example |
+|-------------|-------------|---------|
+| `AWS_ACCESS_KEY_ID` | AWS Access Key for ECR/EKS access | `AKIA...` |
+| `AWS_SECRET_ACCESS_KEY` | AWS Secret Key | `wJalrXUt...` |
+| `AWS_REGION` | AWS Region for resources | `us-west-2` |
+| `AWS_ACCOUNT_ID` | AWS Account ID for ECR URLs | `123456789012` |
+
+### **IAM Permissions Required**
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecr:InitiateLayerUpload",
+        "ecr:UploadLayerPart",
+        "ecr:CompleteLayerUpload",
+        "ecr:PutImage",
+        "ecr:CreateRepository",
+        "ecr:DescribeRepositories"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
