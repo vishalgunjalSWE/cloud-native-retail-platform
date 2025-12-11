@@ -39,3 +39,4 @@ Simple deployment with public container images for demos, learning, and quick te
 ✅ Updates: Manual only
 ✅ Target: Demos, learning, simple deployments
 ```
+
