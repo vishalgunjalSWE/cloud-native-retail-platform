@@ -68,3 +68,20 @@ spec:
     targetRevision: main
     path: src/app/chart
 ```
+
+## 🏭 Production (GitOps Branch)
+
+### **Purpose**
+Full production workflow with automated CI/CD pipeline and private container registry integration.
+
+### **Characteristics**
+```yaml
+✅ Branch: gitops
+✅ Images: Private ECR (auto-updated)
+✅ Deployment: Automated via GitHub Actions
+✅ ArgoCD: Individual service applications
+✅ Workflows: Full CI/CD pipeline (.github/workflows/)
+✅ Updates: Automatic on code changes
+✅ Target: Production environments, enterprise deployments
+```
+
