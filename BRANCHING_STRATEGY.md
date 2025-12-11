@@ -101,4 +101,18 @@ postgresql: public.ecr.aws/docker/library/postgres:13
 rabbitmq: public.ecr.aws/docker/library/rabbitmq:3.8-management
 dynamodb-local: public.ecr.aws/aws-dynamodb-local/aws-dynamodb-local:1.25.1
 ```
+### **ArgoCD Configuration**
+```yaml
+# Uses individual applications for granular control
+- retail-store-ui
+- retail-store-catalog  
+- retail-store-cart
+- retail-store-checkout
+- retail-store-orders
+
+# Each points to gitops branch
+spec:
+  source:
+    targetRevision: gitops
+```
 
