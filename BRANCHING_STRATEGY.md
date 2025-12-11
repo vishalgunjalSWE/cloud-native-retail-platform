@@ -289,3 +289,39 @@ git checkout gitops
 kubectl apply -f argocd/applications/ -n argocd  # Apply individual apps
 ```
 
+## 📊 Branch Comparison
+
+| Feature | Public Application (Main) | Production (GitOps) |
+|---------|---------------------------|---------------------|
+| **Target Environment** | Demos, Learning | Production |
+| **Image Source** | Public ECR | Private ECR |
+| **Image Updates** | Manual | Automated |
+| **Deployment Method** | Umbrella Chart | Individual Apps |
+| **CI/CD Pipeline** | None | GitHub Actions |
+| **Change Detection** | Manual | Automatic |
+| **Rollback Strategy** | Manual | Git revert |
+| **Infrastructure Images** | Public (stable) | Public (preserved) |
+| **Service Images** | Public (stable) | Private (dynamic) |
+
+## 🎯 Best Practices
+
+### **When to Use Public Application (Main Branch)**
+- ✅ Demos and presentations
+- ✅ Learning and experimentation
+- ✅ Quick testing and prototyping
+- ✅ Simple deployments without CI/CD needs
+
+### **When to Use Production (GitOps Branch)**
+- ✅ Production deployments
+- ✅ Enterprise environments
+- ✅ Automated testing pipelines
+- ✅ Continuous deployment workflows
+
+### **Security Considerations**
+- 🔒 Use IAM roles with minimal permissions
+- 🔒 Rotate AWS access keys regularly
+- 🔒 Enable ECR image scanning
+- 🔒 Use branch protection rules
+- 🔒 Review automated commits
+
+---
