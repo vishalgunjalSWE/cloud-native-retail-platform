@@ -56,3 +56,15 @@ rabbitmq: public.ecr.aws/docker/library/rabbitmq:3.8-management
 dynamodb-local: public.ecr.aws/aws-dynamodb-local/aws-dynamodb-local:1.25.1
 ```
 
+### **ArgoCD Configuration**
+```yaml
+# Uses umbrella chart for simplified management
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: retail-store-app
+spec:
+  source:
+    targetRevision: main
+    path: src/app/chart
+```
