@@ -85,3 +85,20 @@ Full production workflow with automated CI/CD pipeline and private container reg
 ✅ Target: Production environments, enterprise deployments
 ```
 
+### **Image Configuration**
+```yaml
+# Services use private ECR (updated by workflow)
+ui: {AWS_ACCOUNT_ID}.dkr.ecr.{REGION}.amazonaws.com/retail-store-ui:{COMMIT_HASH}
+catalog: {AWS_ACCOUNT_ID}.dkr.ecr.{REGION}.amazonaws.com/retail-store-catalog:{COMMIT_HASH}
+cart: {AWS_ACCOUNT_ID}.dkr.ecr.{REGION}.amazonaws.com/retail-store-cart:{COMMIT_HASH}
+checkout: {AWS_ACCOUNT_ID}.dkr.ecr.{REGION}.amazonaws.com/retail-store-checkout:{COMMIT_HASH}
+orders: {AWS_ACCOUNT_ID}.dkr.ecr.{REGION}.amazonaws.com/retail-store-orders:{COMMIT_HASH}
+
+# Infrastructure components (same as main - preserved by workflow)
+mysql: public.ecr.aws/docker/library/mysql:8.0
+redis: public.ecr.aws/docker/library/redis:6.0-alpine
+postgresql: public.ecr.aws/docker/library/postgres:13
+rabbitmq: public.ecr.aws/docker/library/rabbitmq:3.8-management
+dynamodb-local: public.ecr.aws/aws-dynamodb-local/aws-dynamodb-local:1.25.1
+```
+
