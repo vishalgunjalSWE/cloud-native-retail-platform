@@ -39,4 +39,20 @@ Simple deployment with public container images for demos, learning, and quick te
 ✅ Updates: Manual only
 ✅ Target: Demos, learning, simple deployments
 ```
+### **Image Configuration**
+```yaml
+# All services use public ECR images
+ui: public.ecr.aws/aws-containers/retail-store-sample-ui:1.2.2
+catalog: public.ecr.aws/aws-containers/retail-store-sample-catalog:1.2.2
+cart: public.ecr.aws/aws-containers/retail-store-sample-cart:1.2.2
+checkout: public.ecr.aws/aws-containers/retail-store-sample-checkout:1.2.2
+orders: public.ecr.aws/aws-containers/retail-store-sample-orders:1.2.2
+
+# Infrastructure components
+mysql: public.ecr.aws/docker/library/mysql:8.0
+redis: public.ecr.aws/docker/library/redis:6.0-alpine
+postgresql: public.ecr.aws/docker/library/postgres:13
+rabbitmq: public.ecr.aws/docker/library/rabbitmq:3.8-management
+dynamodb-local: public.ecr.aws/aws-dynamodb-local/aws-dynamodb-local:1.25.1
+```
 
