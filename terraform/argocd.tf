@@ -1,7 +1,6 @@
 # ARGOCD INSTALLATION AND CONFIGURATION
 # =============================================================================
 
-# Wait for the cluster and add-ons to be ready
 resource "time_sleep" "wait_for_cluster" {
   create_duration = "30s"
   depends_on = [
@@ -31,7 +30,7 @@ resource "helm_release" "argocd" {
           type = "ClusterIP"
         }
         ingress = {
-          enabled = false  # We'll use port-forward for access
+          enabled = false  
         }
         # Enable insecure mode for easier local access
         extraArgs = [
@@ -85,6 +84,7 @@ resource "helm_release" "argocd" {
 
   depends_on = [time_sleep.wait_for_cluster]
 }
+
 
 # WAIT FOR ARGOCD TO BE READY
 # =============================================================================
