@@ -32,3 +32,16 @@ Unlike traditional monolithic applications, this platform utilizes a **polyglot 
 
 The system is composed of loose-coupled microservices communicating via REST and AMQP (RabbitMQ).
 
+### Application Microservices
+
+The retail store consists of 5 microservices working together:
+
+| Service | Language | Responsibility | Port |
+| :--- | :--- | :--- | :--- |
+| **UI** | Java (Spring Boot) | Web interface (Frontend) | 8080 |
+| **Catalog** | **Go (Golang)** | Product catalog API (High Read Traffic) | 8081 |
+| **Cart** | Java (Spring Boot) | Shopping cart API (Redis Cache) | 8082 |
+| **Orders** | Java (Spring Boot) | Order management API (Transactional) | 8083 |
+| **Checkout** | Node.js (NestJS) | Orchestration & Async Processing | 8084 |
+
+![Application Architecture](./docs/images/architecture.png)
