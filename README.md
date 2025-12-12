@@ -102,3 +102,14 @@ graph LR
 * Kubectl & Helm
 * Docker Desktop
 
+### Phase 1: Provision Infrastructure
+
+We treat infrastructure as ephemeral. The entire VPC and Cluster are built from code.
+
+```bash
+cd terraform
+terraform init
+terraform plan
+terraform apply --auto-approve
+```
+
