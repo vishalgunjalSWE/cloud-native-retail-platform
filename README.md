@@ -27,3 +27,8 @@ Unlike traditional monolithic applications, this platform utilizes a **polyglot 
 *   **GitOps:** Single source of truth for both application and infrastructure state.
 
 ---
+
+## 🏗 Architecture
+
+The system is composed of loose-coupled microservices communicating via REST and AMQP (RabbitMQ).
+
