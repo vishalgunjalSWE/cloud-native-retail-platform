@@ -150,3 +150,11 @@ The Catalog service receives the highest read-traffic (browsing).
 
 ---
 
+## 🤝 Future Roadmap
+
+* [ ] **Cost Optimization:** Implement Karpenter for Just-in-Time node scaling.
+* [ ] **Chaos Engineering:** Integrate Chaos Mesh to simulate pod failures in production.
+* [ ] **Service Mesh:** Migrate to Istio for mTLS and better traffic splitting.
+
+---
+
