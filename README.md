@@ -85,3 +85,10 @@ graph LR
 * **CD Controller:** ArgoCD (GitOps implementation)
 * **Package Manager:** Helm Charts
 
+### 🛡️ Observability & Security
+
+* **Ingress:** Nginx Ingress Controller
+* **Security:** AWS IAM Roles for Service Accounts (IRSA), Network Policies
+* **Secrets:** Kubernetes Secrets (Opaque)
+
+---
