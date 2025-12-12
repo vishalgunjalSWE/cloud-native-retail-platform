@@ -45,3 +45,12 @@ The retail store consists of 5 microservices working together:
 | **Checkout** | Node.js (NestJS) | Orchestration & Async Processing | 8084 |
 
 ![Application Architecture](./docs/images/architecture.png)
+
+### Infrastructure Architecture
+
+The platform runs on a custom VPC with public/private subnets, utilizing **EKS Auto Mode** for compute management.
+
+![EKS Infrastructure](./docs/images/EKS.gif)
+
+---
+
