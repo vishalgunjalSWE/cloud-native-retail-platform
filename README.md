@@ -92,3 +92,13 @@ graph LR
 * **Secrets:** Kubernetes Secrets (Opaque)
 
 ---
+
+## ⚡ Getting Started
+
+### Prerequisites
+
+* AWS CLI configured with Admin permissions
+* Terraform v1.5+
+* Kubectl & Helm
+* Docker Desktop
+
