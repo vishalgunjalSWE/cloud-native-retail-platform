@@ -133,3 +133,12 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 ---
 
+## 🧠 Engineering Decisions & Trade-offs
+
+### Why RabbitMQ?
+
+Instead of synchronous HTTP calls between *Checkout* and *Order* services, I implemented RabbitMQ.
+
+* **Benefit:** If the Order database is under high load, the Checkout service can still accept requests. Messages queue up and are processed when resources are available.
+* **Trade-off:** Introduces "Eventual Consistency" complexity, which handled via idempotency keys.
+
