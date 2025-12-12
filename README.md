@@ -142,3 +142,11 @@ Instead of synchronous HTTP calls between *Checkout* and *Order* services, I imp
 * **Benefit:** If the Order database is under high load, the Checkout service can still accept requests. Messages queue up and are processed when resources are available.
 * **Trade-off:** Introduces "Eventual Consistency" complexity, which handled via idempotency keys.
 
+### Why Go for Catalog?
+
+The Catalog service receives the highest read-traffic (browsing).
+
+* **Decision:** Golang was chosen for its low memory footprint and high concurrency handling compared to the Java services.
+
+---
+
