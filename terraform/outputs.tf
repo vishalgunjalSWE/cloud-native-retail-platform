@@ -1,6 +1,8 @@
 # OUTPUT VALUES
-# ========================
+# =============================================================================
+
 # CLUSTER INFORMATION
+# =============================================================================
 
 output "cluster_name" {
   description = "Name of the EKS cluster (with unique suffix)"
