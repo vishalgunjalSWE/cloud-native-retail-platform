@@ -122,3 +122,14 @@ aws eks update-kubeconfig --region us-west-2 --name cloud-native-retail
 kubectl get nodes
 ```
 
+### Phase 3: Deploy ArgoCD
+
+Deploy the GitOps controller to manage the application state.
+
+```bash
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+---
+
