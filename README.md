@@ -54,3 +54,18 @@ The platform runs on a custom VPC with public/private subnets, utilizing **EKS A
 
 ---
 
+## 🔄 GitOps Workflow
+
+Utilize a "Pull-Based" GitOps deployment strategy. Application state is reconciled automatically by ArgoCD.
+
+```mermaid
+graph LR
+    A[Code Push] --> B[GitHub Actions]
+    B --> C[Build Images]
+    C --> D[Push to ECR]
+    D --> E[Update Helm Charts]
+    E --> F[Commit Changes]
+    F --> G[ArgoCD Sync]
+    G --> H[Deploy to EKS]
+````
+
