@@ -113,3 +113,12 @@ terraform plan
 terraform apply --auto-approve
 ```
 
+### Phase 2: Bootstrap Cluster
+
+Update your local kubeconfig to interact with the new cluster.
+
+```bash
+aws eks update-kubeconfig --region us-west-2 --name cloud-native-retail
+kubectl get nodes
+```
+
