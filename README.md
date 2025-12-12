@@ -78,3 +78,10 @@ graph LR
 * **IaC:** Terraform (Modular structure for VPC, Security Groups, EKS)
 * **Container Registry:** AWS ECR
 
+### 🚀 DevOps & CI/CD
+
+* **Version Control:** Git
+* **CI Pipelines:** GitHub Actions (Linting, Docker Build, Push to ECR)
+* **CD Controller:** ArgoCD (GitOps implementation)
+* **Package Manager:** Helm Charts
+
