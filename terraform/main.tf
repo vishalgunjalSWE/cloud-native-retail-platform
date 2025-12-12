@@ -1,3 +1,7 @@
+# MAIN INFRASTRUCTURE RESOURCES
+# =============================================================================
+
+# VPC CONFIGURATION
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
@@ -36,7 +40,8 @@ module "vpc" {
   tags = local.common_tags
 }
 
-# EKS CLUSTER CONFIGURATION
+# EKS CLUSTER CONFIGURATION Setup
+# =============================================================================
 
 module "retail_app_eks" {
   source  = "terraform-aws-modules/eks/aws"
