@@ -69,3 +69,12 @@ graph LR
     G --> H[Deploy to EKS]
 ````
 
+## 🛠 Tech Stack
+
+### ☁️ Infrastructure & Cloud
+
+* **Cloud Provider:** AWS (Region: `us-west-2`)
+* **Orchestrator:** Amazon EKS (Elastic Kubernetes Service) - *Auto Mode*
+* **IaC:** Terraform (Modular structure for VPC, Security Groups, EKS)
+* **Container Registry:** AWS ECR
+
