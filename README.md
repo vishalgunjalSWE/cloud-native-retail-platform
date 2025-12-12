@@ -20,3 +20,10 @@
 
 Unlike traditional monolithic applications, this platform utilizes a **polyglot microservices architecture** (Go, Java, Node.js) orchestrated on **AWS EKS**. It implements strict **GitOps** workflows using ArgoCD for zero-touch deployments, **Terraform** for immutable infrastructure, and **RabbitMQ** for event-driven resilience.
 
+### Key Engineering Goals
+*   **Decoupling:** Asynchronous communication via message queues to prevent cascading failures.
+*   **Immutability:** Infrastructure provisioning solely via code (IaC) using Terraform.
+*   **Observability:** Comprehensive monitoring of pod health and service latency.
+*   **GitOps:** Single source of truth for both application and infrastructure state.
+
+---
