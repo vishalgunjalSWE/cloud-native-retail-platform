@@ -8,7 +8,7 @@
 
 > **Production-grade microservices platform** built to demonstrate cloud-native architecture, event-driven patterns, GitOps automation, and comprehensive observability on AWS EKS.
 
-![Platform Preview](./docs/architecture-overview.png)
+![Platform Preview](https://github.com/vishalgunjalSWE/cloud-native-retail-platform/blob/49d2bd528f93b053212ce2b1bf512c8d2f31c96b/docs/images/banner.png)
 
 ---
 
@@ -60,7 +60,7 @@ This isn't a tutorial follow-along—every component was architected and impleme
 ## 🏗️ Architecture
 
 <p align="center">
-  <img src="./docs/architecture-diagram.png" alt="System Architecture" width="800"/>
+  <img src="docs\images\application-architecture.png" alt="System Architecture" width="800"/>
 </p>
 
 ### **High-Level Architecture:**
@@ -442,7 +442,7 @@ Jaeger shows:
 
 ---
 
-## 📸 Screenshots
+<!-- ## 📸 Screenshots
 
 <details>
 <summary><b>🖼️ Click to view platform screenshots</b></summary>
@@ -481,7 +481,7 @@ Jaeger shows:
 
 </details>
 
----
+--- -->
 
 ## 🚀 Quick Start
 
@@ -494,7 +494,7 @@ Jaeger shows:
 
 ### **1. Clone Repository**
 ```bash
-git clone https://github.com/VishalGunjal/cloud-native-retail-platform.git
+git clone https://github.com/VishalGunjalswe/cloud-native-retail-platform.git
 cd cloud-native-retail-platform
 ```
 
@@ -549,7 +549,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```bash
 # Create ArgoCD application
 argocd app create retail-platform \
-  --repo https://github.com/VishalGunjal/cloud-native-retail-platform \
+  --repo https://github.com/VishalGunjalswe/cloud-native-retail-platform \
   --path k8s/overlays/dev \
   --dest-server https://kubernetes.default.svc \
   --dest-namespace default \
