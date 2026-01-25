@@ -60,7 +60,7 @@ This isn't a tutorial follow-along—every component was architected and impleme
 ## 🏗️ Architecture
 
 <p align="center">
-  <img src="docs\images\application-architecture.png" alt="System Architecture" width="800"/>
+  <img src="https://github.com/vishalgunjalSWE/cloud-native-retail-platform/blob/main/docs/images/application-architecture.png" alt="System Architecture" width="800"/>
 </p>
 
 ### **High-Level Architecture:**
